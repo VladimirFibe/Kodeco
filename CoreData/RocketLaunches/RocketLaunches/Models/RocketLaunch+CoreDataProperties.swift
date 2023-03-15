@@ -7,6 +7,7 @@ extension RocketLaunch {
     @NSManaged public var launchpad: String?
     @NSManaged public var notes: String?
     @NSManaged public var list: RocketLaunchList
+    @NSManaged public var tags: Set<RocketLaunchTag>?
     
     static func basicFetchRequest() -> FetchRequest<RocketLaunch> {
         FetchRequest(entity: RocketLaunch.entity(), sortDescriptors: [])
@@ -48,6 +49,7 @@ extension RocketLaunch {
                            isViewed: Bool,
                            launchpad: String,
                            in list: RocketLaunchList,
+                           with tags: Set<RocketLaunchTag> = [],
                            using managedObjectContext: NSManagedObjectContext) {
         let launch = RocketLaunch(context: managedObjectContext)
         launch.name = name
@@ -56,6 +58,7 @@ extension RocketLaunch {
         launch.isViewed = isViewed
         launch.launchDate = launchDate
         launch.list = list
+        launch.tags = tags
         do {
             try managedObjectContext.save()
             

@@ -3,6 +3,7 @@ import SwiftUI
 struct ListCreateView: View {
     @Environment(\.managedObjectContext) var viewContext
     @Environment(\.dismiss) var dismiss
+    
     @State private var text = ""
     var body: some View {
         NavigationStack {
@@ -17,6 +18,7 @@ struct ListCreateView: View {
                     .background(Color(red: 231 / 255, green: 234 / 255.0, blue: 237 / 255.0))
                     .cornerRadius(10)
                     .padding()
+
                 Spacer()
             }
             .navigationTitle("Create Launch")

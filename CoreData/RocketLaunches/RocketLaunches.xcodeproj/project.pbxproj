@@ -128,13 +128,13 @@
 		2755B0E129C15CB400A05016 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				27639B4B29C2317F00102AD2 /* RocketLaunchTag+CoreDataClass.swift */,
-				27639B4C29C2317F00102AD2 /* RocketLaunchTag+CoreDataProperties.swift */,
 				2755B0E229C15CC700A05016 /* Persistence.swift */,
 				2755B0E429C167E300A05016 /* RocketLaunch+CoreDataClass.swift */,
 				2755B0E629C1689300A05016 /* RocketLaunch+CoreDataProperties.swift */,
 				27FE37B029C1E5D100036F82 /* RocketLaunchList+CoreDataClass.swift */,
 				27FE37B129C1E5D100036F82 /* RocketLaunchList+CoreDataProperties.swift */,
+				27639B4B29C2317F00102AD2 /* RocketLaunchTag+CoreDataClass.swift */,
+				27639B4C29C2317F00102AD2 /* RocketLaunchTag+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

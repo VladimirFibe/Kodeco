@@ -8,6 +8,9 @@ extension RocketLaunchList {
         return NSFetchRequest<RocketLaunchList>(entityName: "RocketLaunchList")
     }
 
+    @NSManaged public var name: String?
+    @NSManaged public var launches: [RocketLaunch]?
+
     static func create(withName name: String, in managedObjectContext: NSManagedObjectContext) {
         let list = self.init(context: managedObjectContext)
         list.name = name
@@ -17,12 +20,9 @@ extension RocketLaunchList {
         } catch {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-
+            
         }
     }
-    @NSManaged public var name: String?
-    @NSManaged public var launches: [RocketLaunch]?
-
 }
 
 // MARK: Generated accessors for launches

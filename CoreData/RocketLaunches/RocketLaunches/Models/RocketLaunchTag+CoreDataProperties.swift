@@ -9,7 +9,27 @@ extension RocketLaunchTag {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var launches: NSOrderedSet?
+    @NSManaged public var launches: Set<RocketLaunch>
+    
+    static func fethOrCreate(withName name: String, in managedObjectContext: NSManagedObjectContext) -> RocketLaunchTag {
+        let request: NSFetchRequest<RocketLaunchTag> = fetchRequest()
+        let predicate = NSPredicate(format: "%K == %@", "name", name.lowercased())
+        request.predicate = predicate
+        do {
+            let results = try managedObjectContext.fetch(request)
+            if let tag = results.first {
+                return tag
+            } else {
+                let tag = self.init(context: managedObjectContext)
+                tag.name = name
+//                try managedObjectContext.save()
+                return tag
+            }
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
 
 }
 

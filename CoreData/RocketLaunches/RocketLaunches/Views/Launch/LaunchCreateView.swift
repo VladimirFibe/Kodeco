@@ -9,8 +9,10 @@ struct LaunchCreateView: View {
     @State var notes: String = ""
     @State var isViewed = false
     @State var launchDate = Date()
-    @State var launchpad: String = ""
+    @State var launchpad = ""
+    @State var tag = ""
     let list: RocketLaunchList
+
     var body: some View {
         NavigationStack {
             Form {
@@ -18,6 +20,9 @@ struct LaunchCreateView: View {
                     TextField("Title", text: $name)
                     TextField("Launch Pad", text: $launchpad)
                     TextField("Notes", text: $notes)
+                }
+                Section {
+                    TextField("Tag", text: $tag)
                 }
                 Section {
                     DatePicker(selection: $launchDate, displayedComponents: .date) {
@@ -31,18 +36,21 @@ struct LaunchCreateView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
+                        let tags = Set(tag.split(separator: ", ").map {
+                            RocketLaunchTag.fethOrCreate(withName: String($0), in: viewContext)
+                        })
                         RocketLaunch.createWith(name: name,
                                                 notes: notes,
                                                 launchDate: launchDate,
                                                 isViewed: isViewed,
                                                 launchpad: launchpad,
                                                 in: list,
+                                                with: tags,
                                                 using: viewContext)
                         dismiss()
                     } label: {
                         Text("Save")
                     }
-
                 }
             }
         }
