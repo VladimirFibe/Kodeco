@@ -39,6 +39,7 @@ struct LaunchCreateView: View {
                         let tags = Set(tag.split(separator: ", ").map {
                             RocketLaunchTag.fethOrCreate(withName: String($0), in: viewContext)
                         })
+                        print(tags)
                         RocketLaunch.createWith(name: name,
                                                 notes: notes,
                                                 launchDate: launchDate,

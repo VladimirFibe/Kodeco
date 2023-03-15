@@ -7,7 +7,7 @@ extension RocketLaunch {
     @NSManaged public var launchpad: String?
     @NSManaged public var notes: String?
     @NSManaged public var list: RocketLaunchList
-    @NSManaged public var tags: Set<RocketLaunchTag>?
+    @NSManaged var tags: Set<RocketLaunchTag>?
     
     static func basicFetchRequest() -> FetchRequest<RocketLaunch> {
         FetchRequest(entity: RocketLaunch.entity(), sortDescriptors: [])
@@ -43,6 +43,7 @@ extension RocketLaunch {
                             sortDescriptors: [nameSortDescriptor, launchDateSortDescriptor],
                             predicate: combinedPredicate)
     }
+    
     static func createWith(name: String,
                            notes: String,
                            launchDate: Date,
