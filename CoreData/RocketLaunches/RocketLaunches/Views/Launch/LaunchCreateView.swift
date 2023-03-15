@@ -1,13 +1,16 @@
 import SwiftUI
+import CoreData
 
 struct LaunchCreateView: View {
     @Environment(\.dismiss) var dismiss
+    @Environment(\.managedObjectContext) var viewContext
     
     @State var name: String = ""
     @State var notes: String = ""
     @State var isViewed = false
     @State var launchDate = Date()
     @State var launchpad: String = ""
+    let list: RocketLaunchList
     var body: some View {
         NavigationStack {
             Form {
@@ -28,6 +31,13 @@ struct LaunchCreateView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
+                        RocketLaunch.createWith(name: name,
+                                                notes: notes,
+                                                launchDate: launchDate,
+                                                isViewed: isViewed,
+                                                launchpad: launchpad,
+                                                in: list,
+                                                using: viewContext)
                         dismiss()
                     } label: {
                         Text("Save")
@@ -37,10 +47,11 @@ struct LaunchCreateView: View {
             }
         }
     }
+    
 }
-
-struct LaunchCreateView_Previews: PreviewProvider {
-    static var previews: some View {
-        LaunchCreateView()
-    }
-}
+//
+//struct LaunchCreateView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LaunchCreateView()
+//    }
+//}

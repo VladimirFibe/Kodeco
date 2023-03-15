@@ -20,6 +20,13 @@
 		2755B0E329C15CC700A05016 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755B0E229C15CC700A05016 /* Persistence.swift */; };
 		2755B0E529C167E300A05016 /* RocketLaunch+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755B0E429C167E300A05016 /* RocketLaunch+CoreDataClass.swift */; };
 		2755B0E729C1689300A05016 /* RocketLaunch+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755B0E629C1689300A05016 /* RocketLaunch+CoreDataProperties.swift */; };
+		27639B4629C1FFAA00102AD2 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27639B4529C1FFAA00102AD2 /* ListView.swift */; };
+		27639B4829C1FFE300102AD2 /* CirclularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27639B4729C1FFE300102AD2 /* CirclularImageView.swift */; };
+		27639B4A29C2018900102AD2 /* ListCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27639B4929C2018900102AD2 /* ListCreateView.swift */; };
+		27639B4D29C2317F00102AD2 /* RocketLaunchTag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27639B4B29C2317F00102AD2 /* RocketLaunchTag+CoreDataClass.swift */; };
+		27639B4E29C2317F00102AD2 /* RocketLaunchTag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27639B4C29C2317F00102AD2 /* RocketLaunchTag+CoreDataProperties.swift */; };
+		27FE37B229C1E5D100036F82 /* RocketLaunchList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE37B029C1E5D100036F82 /* RocketLaunchList+CoreDataClass.swift */; };
+		27FE37B329C1E5D100036F82 /* RocketLaunchList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE37B129C1E5D100036F82 /* RocketLaunchList+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,13 @@
 		2755B0E229C15CC700A05016 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		2755B0E429C167E300A05016 /* RocketLaunch+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RocketLaunch+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2755B0E629C1689300A05016 /* RocketLaunch+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RocketLaunch+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27639B4529C1FFAA00102AD2 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		27639B4729C1FFE300102AD2 /* CirclularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclularImageView.swift; sourceTree = "<group>"; };
+		27639B4929C2018900102AD2 /* ListCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCreateView.swift; sourceTree = "<group>"; };
+		27639B4B29C2317F00102AD2 /* RocketLaunchTag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RocketLaunchTag+CoreDataClass.swift"; sourceTree = "<group>"; };
+		27639B4C29C2317F00102AD2 /* RocketLaunchTag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RocketLaunchTag+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		27FE37B029C1E5D100036F82 /* RocketLaunchList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RocketLaunchList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		27FE37B129C1E5D100036F82 /* RocketLaunchList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RocketLaunchList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +84,10 @@
 		2755B0C229C1552F00A05016 /* RocketLaunches */ = {
 			isa = PBXGroup;
 			children = (
+				2755B0C329C1552F00A05016 /* RocketLaunchesApp.swift */,
 				2755B0E129C15CB400A05016 /* Models */,
 				2755B0DD29C15A2200A05016 /* Info.plist */,
 				2755B0D129C1558400A05016 /* Views */,
-				2755B0C329C1552F00A05016 /* RocketLaunchesApp.swift */,
 				2755B0C529C1552F00A05016 /* ContentView.swift */,
 				2755B0C729C1553000A05016 /* Assets.xcassets */,
 				2755B0C929C1553000A05016 /* Preview Content */,
@@ -93,6 +107,7 @@
 		2755B0D129C1558400A05016 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				27639B4429C1FF9100102AD2 /* List */,
 				2755B0D229C1558800A05016 /* Launch */,
 			);
 			path = Views;
@@ -113,11 +128,25 @@
 		2755B0E129C15CB400A05016 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				27639B4B29C2317F00102AD2 /* RocketLaunchTag+CoreDataClass.swift */,
+				27639B4C29C2317F00102AD2 /* RocketLaunchTag+CoreDataProperties.swift */,
 				2755B0E229C15CC700A05016 /* Persistence.swift */,
 				2755B0E429C167E300A05016 /* RocketLaunch+CoreDataClass.swift */,
 				2755B0E629C1689300A05016 /* RocketLaunch+CoreDataProperties.swift */,
+				27FE37B029C1E5D100036F82 /* RocketLaunchList+CoreDataClass.swift */,
+				27FE37B129C1E5D100036F82 /* RocketLaunchList+CoreDataProperties.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		27639B4429C1FF9100102AD2 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				27639B4529C1FFAA00102AD2 /* ListView.swift */,
+				27639B4929C2018900102AD2 /* ListCreateView.swift */,
+				27639B4729C1FFE300102AD2 /* CirclularImageView.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,13 +221,20 @@
 			files = (
 				2755B0E329C15CC700A05016 /* Persistence.swift in Sources */,
 				2755B0C629C1552F00A05016 /* ContentView.swift in Sources */,
+				27FE37B229C1E5D100036F82 /* RocketLaunchList+CoreDataClass.swift in Sources */,
 				2755B0D429C1559B00A05016 /* LaunchCreateView.swift in Sources */,
 				2755B0D629C1573500A05016 /* LaunchDetailView.swift in Sources */,
 				2755B0DC29C1591000A05016 /* LaunchesView.swift in Sources */,
+				27639B4D29C2317F00102AD2 /* RocketLaunchTag+CoreDataClass.swift in Sources */,
+				27639B4E29C2317F00102AD2 /* RocketLaunchTag+CoreDataProperties.swift in Sources */,
 				2755B0DA29C1584800A05016 /* NewLaunchButton.swift in Sources */,
 				2755B0D829C1578500A05016 /* LaunchStatusView.swift in Sources */,
 				2755B0E729C1689300A05016 /* RocketLaunch+CoreDataProperties.swift in Sources */,
 				2755B0E029C15C6700A05016 /* RocketLaunches.xcdatamodeld in Sources */,
+				27639B4A29C2018900102AD2 /* ListCreateView.swift in Sources */,
+				27639B4829C1FFE300102AD2 /* CirclularImageView.swift in Sources */,
+				27639B4629C1FFAA00102AD2 /* ListView.swift in Sources */,
+				27FE37B329C1E5D100036F82 /* RocketLaunchList+CoreDataProperties.swift in Sources */,
 				2755B0E529C167E300A05016 /* RocketLaunch+CoreDataClass.swift in Sources */,
 				2755B0C429C1552F00A05016 /* RocketLaunchesApp.swift in Sources */,
 			);
