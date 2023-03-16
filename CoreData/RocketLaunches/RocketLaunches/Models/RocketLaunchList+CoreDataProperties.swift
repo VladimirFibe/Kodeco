@@ -9,7 +9,7 @@ extension RocketLaunchList {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var launches: [RocketLaunch]?
+    @NSManaged public var launches: [RocketLaunch]
 
     static func create(withName name: String, in managedObjectContext: NSManagedObjectContext) {
         let list = self.init(context: managedObjectContext)

@@ -6,7 +6,16 @@ struct LaunchesView: View {
     var launches: FetchedResults<RocketLaunch> {
         launchesFetchRequest.wrappedValue
     }
-    
+    var tags: [RocketLaunchTag] {
+        let tagsSet = launchList.launches
+            .compactMap({$0.tags})
+            .reduce(Set<RocketLaunchTag>(), { result, tags in
+                var result = result
+                result.formUnion(tags)
+                return result
+            })
+        return Array(tagsSet)
+    }
     let sortTypes = [
         (name: "Name",
          descriptors: [SortDescriptor(\RocketLaunch.name, order: .forward)]),
@@ -31,6 +40,11 @@ struct LaunchesView: View {
                                 Text(launch.name)
                             }
                         }
+                    }
+                }
+                Section {
+                    ForEach(tags, id: \.self) { tag in
+                        Text(tag.name ?? "")
                     }
                 }
             }
